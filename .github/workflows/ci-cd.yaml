@@ -16,3 +16,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag k8s-fastapi:$(date +%s)
+
+    - name: Push Docker image to Docker Hub
+      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin docker push "${{ secrets.DOCKERHUB_USERNAME }}/k8s-fastapi:$(date +%s)"
+
