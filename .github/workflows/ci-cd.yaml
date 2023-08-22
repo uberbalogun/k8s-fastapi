@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: belingo/k8s-fastapi:$(date +%s)
+          tags: belingo/k8s-fastapi:0.0.4
