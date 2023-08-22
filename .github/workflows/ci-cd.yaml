@@ -19,5 +19,6 @@ jobs:
 
     - name: Push Docker image to Docker Hub
       run: |
-        echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-        docker push "${{ secrets.DOCKERHUB_USERNAME }}/k8s-fastapi:$(date +%s)"
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        docker push "${{ secrets.DOCKERHUB_USERNAME}}/k8s-fastapi:$(date +%s)"
