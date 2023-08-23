@@ -36,7 +36,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
          push: true
-         tags: belingo/k8s-fastapi:latest
+         tags: belingo/k8s-fastapi:dev-${{ github.sha }}
 
   deploy-to-prod:
     if: github.ref == 'refs/heads/main'
