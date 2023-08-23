@@ -4,9 +4,17 @@ on:
   push:
     branches:
       - 'main'
-
+      - 'dev'
 jobs:
-  build-and-push-image:
+
+  build-and-push-image-dev:
+    runs-on: ubuntu-latest
+    steps:
+      # Custom steps for the 'dev' branch
+      - name: Build the image on the local computer
+        run: docker build -t k8s-fastapi-local:0.0.4
+  
+  build-and-push-image-main:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
