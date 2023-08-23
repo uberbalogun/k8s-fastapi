@@ -12,7 +12,7 @@ jobs:
     steps:
       # Custom steps for the 'dev' branch
       - name: Build the image on the local computer
-        run: docker build -t k8s-fastapi-local:0.0.4 .
+        run:  docker buildx build -o type=docker,dest=- . > k8s-fastapi:0.0.3.tar
   
   build-and-push-image-main:
     runs-on: ubuntu-latest
