@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/uberbalogun/k9s-fastapi:0.0.3
+          tags: ghcr.io/uberbalogun/k8s-fastapi:0.0.3
