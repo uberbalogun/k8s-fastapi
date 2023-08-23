@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to dev environment
         run: |
-          docker build -t k8s-fastapi-local:0.0.3 .
+          docker image ls
 
   deploy-to-prod:
     if: github.ref == 'refs/heads/main'
